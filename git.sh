@@ -6,6 +6,4 @@ commit="git commit -am '"$date"'"
 eval $commit
 git pull origin master
 git push origin master
-git pull gaoyuan master
-git push gaoyuan master
 echo "Success"
