@@ -1,14 +1,43 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>AngularMobileTemplate</title>
   <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    // 手机适配
+    (function (_window) {
+      var docEl = _window.document.documentElement,
+        resizeEvt = 'orientationchange' in _window ? 'orientationchange' : 'resize';
+
+      function s() {
+        var clientWidth = docEl.clientWidth;
+        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+      }
+      _window.addEventListener(resizeEvt, s, false);
+      s();
+    })(window);
+
+  </script>
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+
 </html>

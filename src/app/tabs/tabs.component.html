@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+<moka-tabs>
+
+  <moka-tab [tab]="'home'">
+    <router-outlet name="home"></router-outlet>
+  </moka-tab>
+  <moka-tab [tab]="'about'">
+    <router-outlet name="about"></router-outlet>
+  </moka-tab>
+  <moka-tab [tab]="'contact'">
+    <router-outlet name="contact"></router-outlet>
+  </moka-tab>
+
+  <moka-tab-bar select="[name=bottom]">
+    <moka-tab-button [tab]="'home'" [href]="['/tabs', {outlets:{home:'home'}}]">
+      <!-- '/tabs/(home:home)' -->
+      <!-- ['/tabs', {outlets:{home:'home'}, replaceUrl: true}] -->
+      <!-- , replaceUrl: true -->
+      <div class="tab-button-icon icon-index"></div>
+      <span class="tab-button-text">home</span>
+    </moka-tab-button>
+    <moka-tab-button [tab]="'about'" [href]="['/tabs', {outlets:{about:'about'}}]">
+      <!-- '/tabs/(about:about)' -->
+      <!-- ['/tabs', {outlets:{about:'about'}, replaceUrl: true}] -->
+      <div class="tab-button-icon icon-index"></div>
+      <span class="tab-button-text">about</span>
+    </moka-tab-button>
+    <moka-tab-button [tab]="'contact'" [href]="['/tabs', {outlets:{contact:'contact'}}]">
+        <!-- '/tabs/(contact:contact)' -->
+        <!-- ['/tabs', {outlets:{contact:'contact'}, replaceUrl: true}] -->
+      <div class="tab-button-icon icon-index"></div>
+      <span class="tab-button-text">contact</span>
+    </moka-tab-button>
+  </moka-tab-bar>
+
+</moka-tabs>
