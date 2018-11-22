@@ -1,5 +1,6 @@
-<div class="content-modal">
+<div class="content-modal" user>
     <div class="scroll-content">
-        <p [routerLink]="['user']">user</p>
+        <p (click)="go('info')">info</p>
     </div>
+    <router-outlet></router-outlet>
 </div>

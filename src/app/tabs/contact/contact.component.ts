@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -8,12 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
 
   }
 
   ngOnInit() {
 
+  }
+
+  go(url){
+    this.router.navigate([url],{relativeTo: this.route.parent})
   }
 
 }
