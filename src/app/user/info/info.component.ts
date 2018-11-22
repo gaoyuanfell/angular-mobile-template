@@ -8,7 +8,7 @@ import { navOpen } from 'src/app/core/animations/nav-open';
   styleUrls: ['./info.component.less'],
   animations:[
     navOpen
-  ]
+  ],
 })
 export class InfoComponent implements OnInit {
 
