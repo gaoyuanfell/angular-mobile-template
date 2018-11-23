@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { navOpen } from 'src/app/core/animations/nav-open';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.less'],
-  animations:[
-    navOpen
-  ],
 })
 export class InfoComponent implements OnInit {
 

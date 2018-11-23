@@ -1,5 +1,12 @@
-<div class="content" home>
-    <div class="scroll-content">
-        <p>home</p>
+<div class="content-modal">
+    <div class="scroll-content" style="background: green;">
+        <p (click)="go('home')">home</p>
+        <p (click)="go('about')">about</p>
+        <p (click)="go('contact')">contact</p>
     </div>
+
+    <moka-prepare-route [outlet]="outlet">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </moka-prepare-route>
+
 </div>
