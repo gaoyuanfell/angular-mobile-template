@@ -6,13 +6,13 @@ import {
   RouterOutlet
 } from "@angular/router";
 import { DOCUMENT } from "@angular/common";
-import { routeAnimations } from "../core/animations/route-animations";
+import { bounceInRight } from "../core/animations/route-animations";
 
 @Component({
   selector: "app-tabs",
   templateUrl: "./tabs.component.html",
   styleUrls: ["./tabs.component.less"],
-  animations: [routeAnimations]
+  animations: [bounceInRight]
 })
 export class TabsComponent implements OnInit {
   constructor(

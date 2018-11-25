@@ -9,8 +9,8 @@ import { BaseComponent } from 'src/app/base.component';
 })
 export class AboutComponent extends BaseComponent implements OnInit {
 
-  go(url){
-    this._go(url, this.router, this.route)
+  go(url, number = 0){
+    this._go(url, this.router, this.route, number)
     console.info(this.route)
   }
 
