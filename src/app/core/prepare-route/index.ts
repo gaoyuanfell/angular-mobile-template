@@ -3,7 +3,7 @@ import { BounceInRightComponent } from "./bounce-in-right.component";
 import { NavOpenCloseComponent } from "./nav-open-close.component";
 import { NavOpenComponent } from "./nav-open.component";
 
-export const routeList = [
+export const animationList = [
   BounceInLeftComponent,
   BounceInRightComponent,
   NavOpenCloseComponent,

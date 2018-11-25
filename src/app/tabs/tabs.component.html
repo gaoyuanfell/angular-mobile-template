@@ -2,31 +2,31 @@
   <router-outlet #outlet="outlet"></router-outlet>
 </moka-bounce-in-left>
 
-<!-- <moka-tabs>
+<moka-tabs>
 
   <moka-tab [tab]="'home'">
-    <router-outlet name="home"></router-outlet>
+    <router-outlet #home="outlet" name="home"></router-outlet>
   </moka-tab>
   <moka-tab [tab]="'about'">
-    <router-outlet name="about"></router-outlet>
+    <router-outlet #about="outlet" name="about"></router-outlet>
   </moka-tab>
   <moka-tab [tab]="'contact'">
-    <router-outlet name="contact"></router-outlet>
+    <router-outlet #contact="outlet" name="contact"></router-outlet>
   </moka-tab>
 
   <moka-tab-bar select="[name=bottom]">
-    <moka-tab-button [tab]="'home'" [href]="['/tabs', {outlets:{home:'home'}}]">
+    <moka-tab-button [tab]="'home'" [href]="['tabs', {outlets:{home:'home'}}]">
       <div class="tab-button-icon icon-index"></div>
       <span class="tab-button-text">home</span>
     </moka-tab-button>
-    <moka-tab-button [tab]="'about'" [href]="['/tabs', {outlets:{about:'about'}}]">
+    <moka-tab-button [tab]="'about'" [href]="['tabs', {outlets:{about:'about'}}]">
       <div class="tab-button-icon icon-index"></div>
       <span class="tab-button-text">about</span>
     </moka-tab-button>
-    <moka-tab-button [tab]="'contact'" [href]="['/tabs', {outlets:{contact:'contact'}}]">
+    <moka-tab-button [tab]="'contact'" [href]="['tabs', {outlets:{contact:'contact'}}]">
       <div class="tab-button-icon icon-index"></div>
       <span class="tab-button-text">contact</span>
     </moka-tab-button>
   </moka-tab-bar>
 
-</moka-tabs> -->
+</moka-tabs>

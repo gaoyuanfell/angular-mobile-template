@@ -4,6 +4,7 @@ import { TabComponent } from './tab/tab.component';
 import { TabBarComponent } from './tab-bar/tab-bar.component';
 import { TabButtonComponent } from './tab-button/tab-button.component';
 import { CommonModule } from '@angular/common';
+import { animationList } from './prepare-route';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,8 @@ import { CommonModule } from '@angular/common';
     TabComponent,
     TabBarComponent,
     TabButtonComponent,
+
+    animationList
   ],
   imports: [
     CommonModule,
@@ -20,6 +23,8 @@ import { CommonModule } from '@angular/common';
     TabComponent,
     TabBarComponent,
     TabButtonComponent,
+
+    animationList,
   ]
 })
 export class CoreModule { }

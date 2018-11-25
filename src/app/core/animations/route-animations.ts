@@ -103,13 +103,29 @@ const _navOpenClose = [
   transition(`* <=> *`, _navOpenCloseAnimation),
 ]
 
-export const bounceInRight = trigger("bounceInRight", _bounceInRight);
+export const bounceInRight = trigger('bounceInRight', _bounceInRight);
 
-export const bounceInLeft = trigger("bounceInLeft", _bounceInLeft);
+export const bounceInLeft = trigger('bounceInLeft', _bounceInLeft);
 
-export const navOpen = trigger("navOpen", _navOpen);
+export const navOpen = trigger('navOpen', _navOpen);
 
-export const navOpenClose = trigger("navOpenClose", _navOpenClose);
+export const navOpenClose = trigger('navOpenClose', _navOpenClose);
+
+export const fideIn = trigger('fideIn', [
+  transition(':increment', [
+    query(`${animationContentClass}`, [
+      animate("1200ms ease-out", keyframes([
+        style({ opacity: "0" }),
+        style({ opacity: "1" }),
+      ]))
+    ], { optional: true })
+  ]),
+  transition(':decrement', [
+    query(`${animationContentClass}`, [
+      style({ opacity: "0" })
+    ], { optional: true })
+  ])
+])
 
 export const animateList = [
   bounceInRight,
