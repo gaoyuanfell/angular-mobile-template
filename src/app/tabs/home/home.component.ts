@@ -9,6 +9,7 @@ import { BaseComponent } from 'src/app/base.component';
 })
 export class HomeComponent extends BaseComponent implements OnInit {
 
+  test = false
   go(url, number = 0){
     this._go(url, this.router, this.route, number)
   }
