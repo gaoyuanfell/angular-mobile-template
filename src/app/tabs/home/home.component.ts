@@ -11,7 +11,6 @@ export class HomeComponent extends BaseComponent implements OnInit {
 
   go(url, number = 0){
     this._go(url, this.router, this.route, number)
-    console.info(this.route)
   }
 
   constructor(private router: Router, private route: ActivatedRoute) {

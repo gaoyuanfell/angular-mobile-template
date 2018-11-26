@@ -12,7 +12,7 @@ import { animateList } from '../animations/route-animations';
     '[@navOpenClose]':'prepareRoute(outlet)'
   }
 })
-export class NavOpenCloseComponent implements OnInit {
+export class NavOpenCloseComponent{
 
   prepareRoute(outlet: RouterOutlet) {
     return (
@@ -25,8 +25,5 @@ export class NavOpenCloseComponent implements OnInit {
   @Input() outlet: RouterOutlet;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

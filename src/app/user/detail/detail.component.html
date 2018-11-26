@@ -1,5 +1,9 @@
-<div class="content-modal">
-  <div class="scroll-content">
-      <p (click)="go('info')">info</p>
-  </div>
-</div>
+<moka-content-modal>
+  <moka-header>
+    详情
+  </moka-header>
+  <moka-scroll-content style="background: black;">
+    <p (click)="go('info')">info</p>
+    <p (click)="go('detail')">detail</p>
+  </moka-scroll-content>
+</moka-content-modal>

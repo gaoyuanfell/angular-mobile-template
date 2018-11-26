@@ -1,0 +1,18 @@
+<div class="toolbar toolbar-ios">
+  <div class="toolbar-background toolbar-background-ios"></div>
+  <div class="bar-button">
+    <span class="button-inner" (click)="btnLeftFn()">
+      <ng-content name="btn-left"></ng-content>
+    </span>
+  </div>
+  <div class="bar-button">
+    <span class="button-inner" (click)="btnRightFn()">
+      <ng-content name="btn-right"></ng-content>
+    </span>
+  </div>
+  <div class="title">
+    <div class="toolbar-title toolbar-title-ios" (click)="btnTitleFn()">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

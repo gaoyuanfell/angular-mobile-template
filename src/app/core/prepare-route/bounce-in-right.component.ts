@@ -12,7 +12,7 @@ import { animateList } from '../animations/route-animations';
     '[@bounceInRight]':'prepareRoute(outlet)'
   }
 })
-export class BounceInRightComponent implements OnInit {
+export class BounceInRightComponent{
 
   prepareRoute(outlet: RouterOutlet) {
     return (
@@ -25,8 +25,5 @@ export class BounceInRightComponent implements OnInit {
   @Input() outlet: RouterOutlet;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -1,7 +1,8 @@
-<div class="content-modal">
-    <div class="scroll-content">
-        <p [routerLink]="['user']">user</p>
-        <p>{{url}}</p>
-    </div>
-    <router-outlet></router-outlet>
-</div>
+<moka-content-modal>
+  <moka-header>
+    登录
+  </moka-header>
+  <moka-scroll-content>
+    <button (click)="go()"> go </button>
+  </moka-scroll-content>
+</moka-content-modal>

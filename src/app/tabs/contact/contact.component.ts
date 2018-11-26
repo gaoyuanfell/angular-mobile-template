@@ -16,7 +16,6 @@ export class ContactComponent extends BaseComponent implements OnInit {
 
   go(url, number = 0){
     this._go(url, this.router, this.route, number)
-    console.info(this.route)
   }
 
   constructor(private route: ActivatedRoute, private router: Router) {

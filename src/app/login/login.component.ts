@@ -6,16 +6,13 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
+
+  go(){
+    this.router.navigateByUrl('')
+  }
 
   constructor(private router: Router) {
-    this.url = this.router.url
-  }
-
-  url
-  ngOnInit() {
-    console.info('ok')
 
   }
-
 }

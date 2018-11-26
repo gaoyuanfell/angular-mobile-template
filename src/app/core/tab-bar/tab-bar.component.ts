@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ContentChildren, QueryList } from "@angular/core";
+import { TabButtonComponent } from "../tab-button/tab-button.component";
 
 @Component({
-  selector: 'moka-tab-bar',
-  templateUrl: './tab-bar.component.html',
-  styleUrls: ['./tab-bar.component.less'],
-  host:{
-    '[attr.class]':'"tabbar tabs-ios show-tabbar"'
+  selector: "moka-tab-bar",
+  templateUrl: "./tab-bar.component.html",
+  styleUrls: ["./tab-bar.component.less"],
+  host: {
+    "[attr.class]": '"tabbar tabs-ios show-tabbar"'
   }
-
 })
-export class TabBarComponent implements OnInit {
+export class TabBarComponent {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  @ContentChildren(TabButtonComponent) tabButtons: QueryList<TabButtonComponent>
 }

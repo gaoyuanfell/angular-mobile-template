@@ -9,7 +9,7 @@ import {
   keyframes
 } from "@angular/animations";
 
-const animationContentClass = '.content-modal'
+const animationContentClass = 'moka-content-modal'
 
 const _bounceInRightAnimation = [
   query(`:enter ${animationContentClass}`, [style({ left: "-100%" })], { optional: true }),
@@ -32,6 +32,20 @@ const _bounceInLeftAnimation = [
   group([
     query(`:enter ${animationContentClass}`, [
       animate("300ms ease-out", style({ left: "0%" }))
+    ], { optional: true }),
+    query(`:leave ${animationContentClass}`, [
+      animate("300ms ease-out", style({ left: "-100%" }))
+    ], { optional: true })
+  ]),
+]
+
+const _bounceOpacityInLeftAnimation = [
+  query(`:enter ${animationContentClass}`, [style({ opacity: "0" })], { optional: true }),
+  query(`:leave ${animationContentClass}`, animateChild(), { optional: true }),
+  query(`:enter ${animationContentClass}`, animateChild(), { optional: true }),
+  group([
+    query(`:enter ${animationContentClass}`, [
+      animate("300ms ease-out", style({ opacity: "1" }))
     ], { optional: true }),
     query(`:leave ${animationContentClass}`, [
       animate("300ms ease-out", style({ left: "-100%" }))
@@ -95,6 +109,10 @@ const _bounceInLeft = [
   transition(`* <=> *`, _bounceInLeftAnimation)
 ]
 
+const _bounceOpacityInLeft = [
+  transition(`* <=> *`, _bounceOpacityInLeftAnimation)
+]
+
 const _navOpen = [
   transition(`* <=> *`, _navOpenAnimation)
 ]
@@ -106,6 +124,8 @@ const _navOpenClose = [
 export const bounceInRight = trigger('bounceInRight', _bounceInRight);
 
 export const bounceInLeft = trigger('bounceInLeft', _bounceInLeft);
+
+export const bounceOpacityInLeft = trigger('bounceOpacityInLeft', _bounceOpacityInLeft);
 
 export const navOpen = trigger('navOpen', _navOpen);
 
@@ -130,6 +150,8 @@ export const fideIn = trigger('fideIn', [
 export const animateList = [
   bounceInRight,
   bounceInLeft,
+  bounceOpacityInLeft,
   navOpen,
   navOpenClose,
+  fideIn,
 ]

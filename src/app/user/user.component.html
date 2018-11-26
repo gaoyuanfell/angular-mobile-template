@@ -1,9 +1,13 @@
-<div class="content-modal">
-  <div class="scroll-content" style="background: red;">
+<moka-content-modal>
+  <moka-header>
+    用户
+  </moka-header>
+  <moka-scroll-content style="background: red;">
     <p (click)="go('info')">info</p>
     <p (click)="go('detail')">detail</p>
-  </div>
-</div>
+  </moka-scroll-content>
+</moka-content-modal>
+
 <moka-nav-open-close [outlet]="outlet">
   <router-outlet #outlet="outlet"></router-outlet>
 </moka-nav-open-close>
