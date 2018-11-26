@@ -1,11 +1,13 @@
 <div class="content-modal">
-    <div class="scroll-content" style="background: green;">
-        <p (click)="go('home', 1)">home</p>
-        <p (click)="go('about', 1)">about</p>
-        <p (click)="go('contact')">contact</p>
+  <div class="scroll-content" (click)="go('user', 1)">
+    <div>
+      <img src="http://img.t.388g.com/7/images/201610/1476974457799530.jpg" alt="">
+      <img src="http://pic2.16pic.com/00/33/17/16pic_3317149_b.jpg" alt="">
+      <img src="http://pic1.win4000.com/wallpaper/2017-11-28/5a1cf982a85bd.jpg" alt="">
+      <img src="http://img3.3lian.com/2013/s1/94/d/78.jpg" alt="">
+      <img src="http://image.biaobaiju.com/uploads/20180303/01/1520010921-PoYaAKrCQg.jpg" alt="">
+      <img src="http://img.mp.itc.cn/upload/20161021/a8492c986864488c869ea3e21d786573_th.jpg" alt="">
+      <img src="http://img17.3lian.com/d/file/201703/08/268b1af389f64876e5e47aeee9eaabf8.jpg" alt="">
     </div>
+  </div>
 </div>
-
-<moka-nav-open-close [outlet]="outlet">
-    <router-outlet #outlet="outlet"></router-outlet>
-</moka-nav-open-close>

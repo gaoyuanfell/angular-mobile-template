@@ -14,12 +14,6 @@ export class HomeComponent extends BaseComponent implements OnInit {
     console.info(this.route)
   }
 
-  closePopup() {
-    // Providing a `null` value to the named outlet
-    // clears the contents of the named outlet
-    // this.router.navigate(['/tabs', { outlets: { home: null, contact: null, about: null } }]);
-  }
-
   constructor(private router: Router, private route: ActivatedRoute) {
     super()
   }

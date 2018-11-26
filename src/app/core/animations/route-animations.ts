@@ -114,7 +114,7 @@ export const navOpenClose = trigger('navOpenClose', _navOpenClose);
 export const fideIn = trigger('fideIn', [
   transition(':increment', [
     query(`${animationContentClass}`, [
-      animate("1200ms ease-out", keyframes([
+      animate("200ms ease-out", keyframes([
         style({ opacity: "0" }),
         style({ opacity: "1" }),
       ]))

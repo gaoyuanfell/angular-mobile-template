@@ -1,5 +1,9 @@
 <div class="content-modal">
-    <div class="scroll-content" style="background: red;">
-        <p (click)="go('info')">info</p>
-    </div>
+  <div class="scroll-content" style="background: red;">
+    <p (click)="go('info')">info</p>
+    <p (click)="go('detail')">detail</p>
+  </div>
 </div>
+<moka-nav-open-close [outlet]="outlet">
+  <router-outlet #outlet="outlet"></router-outlet>
+</moka-nav-open-close>

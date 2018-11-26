@@ -1,21 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseComponent } from 'src/app/base.component';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.less'],
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent extends BaseComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  go(url, number = 0){
+    this._go(url, this.router, this.route, number)
+    console.info(this.route)
+  }
+
+  constructor(private route: ActivatedRoute, private router: Router) {
+    super();
+   }
 
   ngOnInit() {
     console.info('detail')
-  }
-
-  go(url){
-    this.router.navigate([url],{relativeTo: this.route.parent})
   }
 
 }

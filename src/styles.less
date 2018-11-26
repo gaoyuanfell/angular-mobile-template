@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 *,
 *:before,
@@ -14,8 +14,9 @@
   -webkit-touch-callout: none;
 }
 
-html, body {
-  height:100%;
+html,
+body {
+  height: 100%;
   /*transform: scale(0.8);*/
 }
 audio,
@@ -37,10 +38,12 @@ strong {
 
 img {
   max-width: 100%;
+  max-height: 100%;
+  display: block;
   border: 0;
 }
 ul li {
-  list-style:none;
+  list-style: none;
 }
 
 svg:not(:root) {
@@ -116,8 +119,8 @@ input[type="submit"] {
 a,
 a div,
 a span,
-a ,
-a ,
+a,
+a,
 button,
 button div,
 button span,
@@ -204,6 +207,8 @@ template {
   outline: none;
 }
 
+//  base
+
 html {
   width: 100%;
   height: 100%;
@@ -212,35 +217,22 @@ html {
 }
 
 body {
-  font-size: 0.28rem;
-  font-family: Arial,Helvetica,sans-serif;
+  font-size: 0.24rem;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   position: fixed;
-  overflow: hidden;
   width: 100%;
   max-width: 100%;
   height: 100%;
   max-height: 100%;
-  font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow: hidden;
   touch-action: manipulation;
   word-wrap: break-word;
+  overscroll-behavior-y: none;
   text-size-adjust: none;
-  user-select: none;
-}
-
-.content {
-  left: 0;
-  top: 0;
-  position: absolute;
-  z-index: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  contain: strict;
-  background: #f2f2f2;
+  -webkit-user-drag: none;
 }
 
 .content-modal {
@@ -252,6 +244,7 @@ body {
   display: block;
   width: 100%;
   background: #f2f2f2;
+  contain: strict;
   z-index: 11;
 }
 
@@ -264,10 +257,11 @@ body {
   z-index: 2;
   display: block;
   overflow-x: hidden;
-  overflow-y: scroll;
-  will-change: scroll-position;
-  contain: size style layout;
+  overflow-y: auto;
   background: #f2f2f2;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+  overscroll-behavior: contain;
 }
 
 [margin-header] {
@@ -276,4 +270,34 @@ body {
 
 [margin-tabbar] {
   margin-bottom: 1rem;
+}
+
+// public
+
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-space-between {
+  justify-content: space-between;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-items-stretch {
+  align-items: stretch;
 }

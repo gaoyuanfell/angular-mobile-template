@@ -16,18 +16,40 @@ const routes: Routes = [
       {
         path: 'home',
         outlet: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        // children:[
+        //   {
+        //     path: 'user',
+        //     loadChildren: '../user/user.module#UserModule'
+        //   }
+        // ]
       },
       {
         path: 'about',
         outlet: 'about',
-        component: AboutComponent
+        component: AboutComponent,
+        // children:[
+        //   {
+        //     path: 'user',
+        //     loadChildren: '../user/user.module#UserModule'
+        //   }
+        // ]
       },
       {
         path: 'contact',
         outlet: 'contact',
         component: ContactComponent,
+        // children:[
+        //   {
+        //     path: 'user',
+        //     loadChildren: '../user/user.module#UserModule'
+        //   }
+        // ]
       },
+      {
+        path: 'user',
+        loadChildren: '../user/user.module#UserModule'
+      }
     ]
   },
   {

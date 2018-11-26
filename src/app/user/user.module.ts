@@ -4,6 +4,7 @@ import { UserComponent } from './user.component';
 import { UserRouterModule } from './user.router.module';
 import { InfoComponent } from './info/info.component';
 import { DetailComponent } from './detail/detail.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { DetailComponent } from './detail/detail.component';
   ],
   imports: [
     CommonModule,
-    UserRouterModule
+    UserRouterModule,
+    CoreModule,
   ]
 })
 export class UserModule { }

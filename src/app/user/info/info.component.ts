@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseComponent } from 'src/app/base.component';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.less'],
 })
-export class InfoComponent implements OnInit {
+export class InfoComponent extends BaseComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  go(){
+    history.back();
+  }
+
+  constructor(private route: ActivatedRoute, private router: Router) {
+    super()
+  }
 
   ngOnInit() {
     console.info('info')
-  }
-
-  go(url){
-    this.router.navigate([url],{relativeTo: this.route.parent, queryParams:{b:1}})
   }
 
 }

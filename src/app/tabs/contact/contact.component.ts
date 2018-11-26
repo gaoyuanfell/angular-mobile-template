@@ -14,8 +14,8 @@ import { navOpenClose } from 'src/app/core/animations/route-animations';
 })
 export class ContactComponent extends BaseComponent implements OnInit {
 
-  go(url) {
-    this._go(url, this.router, this.route)
+  go(url, number = 0){
+    this._go(url, this.router, this.route, number)
     console.info(this.route)
   }
 
