@@ -7,7 +7,7 @@ import { fideIn } from "../animations/route-animations";
   styleUrls: ["./tab.component.less"],
   animations: [fideIn],
   host: {
-    "[@fideIn]": "_zIndex"
+    "[@fideIn]": "+active"
   }
 })
 export class TabComponent {
@@ -15,7 +15,7 @@ export class TabComponent {
   _zIndex = 0;
   set zIndex(i) {
     this._zIndex = i;
-    this.renderer.setStyle(this.ref.nativeElement, "z-index", i);
+    // this.renderer.setStyle(this.ref.nativeElement, "z-index", i);
     this.renderer.setStyle(
       this.ref.nativeElement,
       "visibility",

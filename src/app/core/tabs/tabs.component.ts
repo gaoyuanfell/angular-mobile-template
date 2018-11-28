@@ -9,7 +9,7 @@ import { TabBarComponent } from '../tab-bar/tab-bar.component';
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.less']
 })
-export class TabsComponent implements AfterContentInit {
+export class TabsComponent{
 
   select(tab) {
     if (!this.tabs || !tab) return;
@@ -28,12 +28,6 @@ export class TabsComponent implements AfterContentInit {
     const comBtn = this.tabBar.tabButtons.find(t => t.tab === tab)
     if (comBtn) {
       comBtn.active = true;
-    }
-  }
-
-  ngAfterContentInit(): void {
-    if (this.tabs.first) {
-      this.select(this.tabs.first.tab)
     }
   }
 
