@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { animationList } from './core/prepare-route';
 import { CoreModule } from './core/core.module';
 
 @NgModule({

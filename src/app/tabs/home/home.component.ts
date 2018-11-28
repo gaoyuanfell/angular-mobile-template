@@ -1,25 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { BaseComponent } from 'src/app/base.component';
+import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
+import { BaseComponent } from "src/app/base.component";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.less']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.less"],
 })
 export class HomeComponent extends BaseComponent implements OnInit {
 
   test = false
-  go(url, number = 0){
-    this._go(url, this.router, this.route, number)
+
+  ok(data){
+    console.info(data)
+  }
+
+  go(url, number = 0) {
+    this._go(url, this.router, this.route, number);
   }
 
   constructor(private router: Router, private route: ActivatedRoute) {
-    super()
+    super();
   }
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit() {}
 }
