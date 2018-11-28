@@ -10,7 +10,7 @@ import {
   stagger
 } from "@angular/animations";
 
-const animationContentClass = "moka-content-modal,moka-tab-content";
+const animationContentClass = "moka-tab-modal,moka-tab-content";
 
 const _bounceInRightAnimation = [
   query(`:enter ${animationContentClass}`, [style({ left: "-100%" })], {

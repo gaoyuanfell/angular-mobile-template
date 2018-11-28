@@ -8,11 +8,11 @@ import {
 import { DOCUMENT } from "@angular/platform-browser";
 
 @Component({
-  selector: "moka-scroll-content",
-  templateUrl: "./scroll-content.component.html",
-  styleUrls: ["./scroll-content.component.less"]
+  selector: "moka-tab-scroll",
+  templateUrl: "./tab-scroll.component.html",
+  styleUrls: ["./tab-scroll.component.less"]
 })
-export class ScrollContentComponent implements OnInit {
+export class TabScrollComponent implements OnInit {
   constructor(
     private ref: ElementRef,
     private renderer: Renderer2,

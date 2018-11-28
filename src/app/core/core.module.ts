@@ -6,8 +6,8 @@ import { TabButtonComponent } from './tab-button/tab-button.component';
 import { CommonModule } from '@angular/common';
 import { animationList } from './prepare-route';
 import { HeaderComponent } from './header/header.component';
-import { ContentModalComponent } from './content-modal/content-modal.component';
-import { ScrollContentComponent } from './scroll-content/scroll-content.component';
+import { TabModalComponent } from './tab-modal/tab-modal.component';
+import { TabScrollComponent } from './tab-scroll/tab-scroll.component';
 import { TabContentComponent } from './tab-content/tab-content.component';
 
 @NgModule({
@@ -17,11 +17,10 @@ import { TabContentComponent } from './tab-content/tab-content.component';
     TabBarComponent,
     TabButtonComponent,
     TabContentComponent,
+    TabModalComponent,
+    TabScrollComponent,
 
     HeaderComponent,
-    ContentModalComponent,
-    ScrollContentComponent,
-
     animationList
   ],
   imports: [
@@ -33,11 +32,10 @@ import { TabContentComponent } from './tab-content/tab-content.component';
     TabBarComponent,
     TabButtonComponent,
     TabContentComponent,
+    TabModalComponent,
+    TabScrollComponent,
 
     HeaderComponent,
-    ContentModalComponent,
-    ScrollContentComponent,
-
     animationList,
   ]
 })

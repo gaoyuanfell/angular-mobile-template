@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContentModalComponent } from './content-modal.component';
+import { TabScrollComponent } from './tab-scroll.component';
 
-describe('ContentModalComponent', () => {
-  let component: ContentModalComponent;
-  let fixture: ComponentFixture<ContentModalComponent>;
+describe('TabScrollComponent', () => {
+  let component: TabScrollComponent;
+  let fixture: ComponentFixture<TabScrollComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentModalComponent ]
+      declarations: [ TabScrollComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContentModalComponent);
+    fixture = TestBed.createComponent(TabScrollComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
