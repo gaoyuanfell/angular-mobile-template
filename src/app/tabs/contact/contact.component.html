@@ -2,8 +2,8 @@
   <moka-header>
     联系
   </moka-header>
-  <moka-tab-scroll >
-      <!-- (click)="go('user', 1)" -->
+  <moka-tab-scroll>
+    <!-- (click)="go('user', 1)" -->
     <div>
       <button (click)="go('about', 0)">about</button>
       <img src="http://pic.58pic.com/58pic/17/43/64/55d58PICRBY_1024.jpg" alt="">
@@ -17,5 +17,5 @@
 </moka-tab-content>
 
 <moka-nav-open-close [outlet]="outlet">
-    <router-outlet #outlet="outlet"></router-outlet>
-  </moka-nav-open-close>
+  <router-outlet #outlet="outlet"></router-outlet>
+</moka-nav-open-close>
