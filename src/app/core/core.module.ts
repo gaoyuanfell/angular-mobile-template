@@ -8,7 +8,6 @@ import { animationList } from './prepare-route';
 import { HeaderComponent } from './header/header.component';
 import { TabModalComponent } from './tab-modal/tab-modal.component';
 import { TabScrollComponent } from './tab-scroll/tab-scroll.component';
-import { TabContentComponent } from './tab-content/tab-content.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { TabContentComponent } from './tab-content/tab-content.component';
     TabComponent,
     TabBarComponent,
     TabButtonComponent,
-    TabContentComponent,
     TabModalComponent,
     TabScrollComponent,
 
@@ -31,7 +29,6 @@ import { TabContentComponent } from './tab-content/tab-content.component';
     TabComponent,
     TabBarComponent,
     TabButtonComponent,
-    TabContentComponent,
     TabModalComponent,
     TabScrollComponent,
 

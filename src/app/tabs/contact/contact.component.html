@@ -1,20 +1,13 @@
-<moka-tab-content>
+<moka-tab-modal [zIndex]="1">
   <moka-header>
     联系
   </moka-header>
   <moka-tab-scroll>
-    <!-- (click)="go('user', 1)" -->
-    <div>
-      <button (click)="go('about', 0)">about</button>
-      <img src="http://pic.58pic.com/58pic/17/43/64/55d58PICRBY_1024.jpg" alt="">
-      <img src="http://imgsrc.baidu.com/imgad/pic/item/4ec2d5628535e5ddffd9f5e67dc6a7efce1b6215.jpg" alt="">
-      <img src="http://img2.3lian.com/2014/f5/73/d/70.jpg" alt="">
-      <img src="http://gss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d1160924ab18972b53f06221e4cd7b899f510a16.jpg"
-        alt="">
-      <img src="http://b-ssl.duitang.com/uploads/item/201412/11/20141211130052_2TVRn.jpeg" alt="">
-    </div>
+      <div class="flex align-items-center justify-content-center" style="height: 100%;">
+          <h1 style="font-size: 10rem;">C</h1>
+      </div>
   </moka-tab-scroll>
-</moka-tab-content>
+</moka-tab-modal>
 
 <moka-nav-open-close [outlet]="outlet">
   <router-outlet #outlet="outlet"></router-outlet>

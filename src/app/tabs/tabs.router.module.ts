@@ -12,11 +12,13 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsComponent,
     canActivateChild: [AuthGuard],
+    data: {animation: 'TabsComponent'},
     children: [
       {
         path: '',
         redirectTo: '/tabs/(home:home)',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: {animation: 'TabsComponent'},
       },
       {
         path: 'home',
@@ -42,7 +44,8 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '/tabs/(home:home)',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {animation: 'TabsComponent'},
   }
 ];
 

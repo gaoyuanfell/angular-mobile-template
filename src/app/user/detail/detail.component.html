@@ -2,8 +2,13 @@
   <moka-header>
     详情
   </moka-header>
-  <moka-tab-scroll style="background: black;">
-    <p (click)="go('info')">info</p>
-    <p (click)="go('detail')">detail</p>
+  <moka-tab-scroll>
+    <div class="flex align-items-center justify-content-center" style="height: 100%;">
+      <div>
+        <p (click)="go('info', 1)">info</p>
+        <p (click)="go('detail', 1)">detail</p>
+        <h1 style="font-size: 10rem;">F</h1>
+      </div>
+    </div>
   </moka-tab-scroll>
 </moka-tab-modal>

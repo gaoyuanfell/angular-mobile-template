@@ -9,7 +9,7 @@ import { TabBarComponent } from '../tab-bar/tab-bar.component';
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.less']
 })
-export class TabsComponent{
+export class TabsComponent implements AfterContentInit{
 
   select(tab) {
     if (!this.tabs || !tab) return;
@@ -31,19 +31,28 @@ export class TabsComponent{
     }
   }
 
+  ngAfterContentInit() {
+    let tab = this.getTab(this.router.url)
+    this.select(tab);
+  }
+
   constructor(private router: Router, private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        let _r = event.url.match(/\((.*)\)/)
-        if (_r instanceof Array) {
-          let __r = _r[1].split(/\/\//);
-          if (__r instanceof Array && __r[0] && !!~__r[0].indexOf(':')) {
-            let tab = __r[0].split(/:/)[0]
-            this.select(tab);
-          }
-        }
+        let tab = this.getTab(event.url)
+        this.select(tab);
       }
     })
+  }
+
+  getTab(url){
+    let _r = url.match(/\((.*)\)/)
+    if (_r instanceof Array) {
+      let __r = _r[1].split(/\/\//);
+      if (__r instanceof Array && __r[0] && !!~__r[0].indexOf(':')) {
+        return __r[0].split(/:/)[0]
+      }
+    }
   }
 
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>

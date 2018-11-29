@@ -1,16 +1,10 @@
-<moka-tab-content>
+<moka-tab-modal [zIndex]="1">
   <moka-header>
     相关
   </moka-header>
   <moka-tab-scroll (click)="go('user', 1)">
-    <div>
-      <img src="http://b-ssl.duitang.com/uploads/item/201401/25/20140125212657_cVBz4.thumb.700_0.jpeg" alt="">
-      <img src="http://imgsrc.baidu.com/imgad/pic/item/d0c8a786c9177f3e57074bd97acf3bc79f3d5636.jpg" alt="">
-      <img src="http://img2.xiazaizhijia.com/walls/20151126/1440x900_c17d23766817481.jpg" alt="">
-      <img src="http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1601/07/c7/17318133_1452142939893_mthumb.jpg" alt="">
-      <img src="http://b-ssl.duitang.com/uploads/item/201707/24/20170724102556_mRZds.jpeg" alt="">
-      <img src="http://img3.duitang.com/uploads/item/201605/01/20160501001202_BshJf.jpeg" alt="">
-      <img src="http://uploads.xuexila.com/allimg/1703/861-1F325120036.png" alt="">
-    </div>
+      <div class="flex align-items-center justify-content-center" style="height: 100%;">
+          <h1 style="font-size: 10rem;" (click)="go('user',1)">B</h1>
+      </div>
   </moka-tab-scroll>
-</moka-tab-content>
+</moka-tab-modal>

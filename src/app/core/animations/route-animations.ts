@@ -10,58 +10,61 @@ import {
   stagger
 } from "@angular/animations";
 
-const animationContentClass = "moka-tab-modal,moka-tab-content";
+const animationContentClass = "moka-tab-modal";
 
 const _bounceInRightAnimation = [
   query(`:enter ${animationContentClass}`, [style({ left: "-100%" })], {
-    optional: true
+    optional: true,
+    limit: 1
   }),
   group([
     query(
       `:enter ${animationContentClass}`,
       [animate("300ms ease-out", style({ left: "0%" }))],
-      { optional: true }
+      { optional: true, limit: 1 }
     ),
     query(
       `:leave ${animationContentClass}`,
       [animate("300ms ease-out", style({ left: "100%" }))],
-      { optional: true }
+      { optional: true, limit: 1 }
     )
   ])
 ];
 
 const _bounceInLeftAnimation = [
   query(`:enter ${animationContentClass}`, [style({ left: "100%" })], {
-    optional: true
+    optional: true,
+    limit: 1
   }),
   group([
     query(
       `:enter ${animationContentClass}`,
       [animate("300ms ease-out", style({ left: "0%" }))],
-      { optional: true }
+      { optional: true, limit: 1 }
     ),
     query(
       `:leave ${animationContentClass}`,
       [animate("300ms ease-out", style({ left: "-100%" }))],
-      { optional: true }
+      { optional: true, limit: 1 }
     )
   ])
 ];
 
 const _bounceOpacityInLeftAnimation = [
   query(`:enter ${animationContentClass}`, [style({ opacity: "0" })], {
-    optional: true
+    optional: true,
+    limit: 1
   }),
   group([
     query(
       `:enter ${animationContentClass}`,
       [animate("300ms ease-out", style({ opacity: "1" }))],
-      { optional: true }
+      { optional: true, limit: 1 }
     ),
     query(
       `:leave ${animationContentClass}`,
       [animate("300ms ease-out", style({ left: "-100%", opacity: "0" }))],
-      { optional: true }
+      { optional: true, limit: 1 }
     )
   ])
 ];
@@ -70,17 +73,17 @@ const _navOpenAnimation = [
   query(
     `:enter ${animationContentClass}, :leave ${animationContentClass}`,
     [style({ transformOrigin: "50% 50%" })],
-    { optional: true }
+    { optional: true, limit: 1 }
   ),
   query(
     `:enter ${animationContentClass}`,
     [style({ boxShadow: "1px 1px 15px #3e3e3e" })],
-    { optional: true }
+    { optional: true, limit: 1 }
   ),
   query(
     `:enter ${animationContentClass}`,
     [style({ opacity: 0, transform: "scale3d(.85, .85, .85)" })],
-    { optional: true }
+    { optional: true, limit: 1 }
   ),
   group([
     query(
@@ -91,12 +94,12 @@ const _navOpenAnimation = [
           style({ opacity: 1, transform: "scale3d(1, 1, 1)" })
         )
       ],
-      { optional: true }
+      { optional: true, limit: 1 }
     ),
     query(
       `:leave ${animationContentClass}`,
       [animate("0.18s ease", style({ opacity: 0 }))],
-      { optional: true }
+      { optional: true, limit: 1 }
     )
   ])
 ];
@@ -105,12 +108,12 @@ const _navOpenCloseAnimation = [
   query(
     `:enter ${animationContentClass}, :leave ${animationContentClass}`,
     [style({ transformOrigin: "50% 50%", boxShadow: "1px 1px 15px #3e3e3e" })],
-    { optional: true }
+    { optional: true, limit: 1 }
   ),
   query(
     `:enter ${animationContentClass}`,
     [style({ opacity: 0, transform: "scale3d(.85, .85, .85)" })],
-    { optional: true }
+    { optional: true, limit: 1 }
   ),
   group([
     query(
@@ -121,7 +124,7 @@ const _navOpenCloseAnimation = [
           style({ opacity: 1, transform: "scale3d(1, 1, 1)" })
         )
       ],
-      { optional: true }
+      { optional: true, limit: 1 }
     ),
     query(
       `:leave ${animationContentClass}`,
@@ -131,7 +134,7 @@ const _navOpenCloseAnimation = [
           style({ opacity: 0, transform: "scale3d(.85, .85, .85)" })
         )
       ],
-      { optional: true }
+      { optional: true, limit: 1 }
     )
   ])
 ];
@@ -140,7 +143,9 @@ const _bounceInRight = [transition(`* <=> *`, _bounceInRightAnimation)];
 
 const _bounceInLeft = [transition(`* <=> *`, _bounceInLeftAnimation)];
 
-const _bounceOpacityInLeft = [transition(`* <=> *`, _bounceOpacityInLeftAnimation)];
+const _bounceOpacityInLeft = [
+  transition(`* <=> *`, _bounceOpacityInLeftAnimation)
+];
 
 const _navOpen = [transition(`* <=> *`, _navOpenAnimation)];
 
@@ -169,12 +174,13 @@ export const fideIn = trigger("fideIn", [
           keyframes([style({ opacity: "0" }), style({ opacity: "1" })])
         )
       ],
-      { optional: true }
+      { optional: true, limit: 1 }
     )
   ]),
   transition(":decrement", [
     query(`${animationContentClass}`, [style({ opacity: "0" })], {
-      optional: true
+      optional: true,
+      limit: 1
     })
   ])
 ]);
@@ -190,41 +196,47 @@ export const animateList = [
 
 // ---------------------------- 测试 ----------------------------------
 export const fideIn2 = trigger("fideIn2", [
-  state('false', style({
-    opacity: "0"
-  })),
-  state('true', style({
-    opacity: "1"
-  })),
-  transition('false <=> true', [
-    animate('1s ease')
-  ])
+  state(
+    "false",
+    style({
+      opacity: "0"
+    })
+  ),
+  state(
+    "true",
+    style({
+      opacity: "1"
+    })
+  ),
+  transition("false <=> true", [animate("1s ease")])
 ]);
 
-export const fideIn3 = trigger('fideIn3', [
-  transition(':enter', [
+export const fideIn3 = trigger("fideIn3", [
+  transition(":enter", [
     style({ opacity: 0 }),
-    animate('0.5s', style({ opacity: 1 })),
+    animate("0.5s", style({ opacity: 1 }))
   ]),
-  transition(':leave', [
-    animate('0.5s', style({ opacity: 0 }))
-  ])
-])
+  transition(":leave", [animate("0.5s", style({ opacity: 0 }))])
+]);
 
-export const listAnimation = trigger('listAnimation', [
-  transition('* => *', [ // each time the binding value changes
-    query(':leave', [
-      style({ opacity: 1 }),
-      stagger(100, [
-        animate('0.5s', style({ opacity: 0 }))
-      ])
-    ],{optional: true}),
-    query(':enter', [
-      style({ opacity: 0 }),
-      stagger(100, [
-        animate('0.5s', style({ opacity: 1 }))
-      ])
-    ],{optional: true})
+export const listAnimation = trigger("listAnimation", [
+  transition("* => *", [
+    // each time the binding value changes
+    query(
+      ":leave",
+      [
+        style({ opacity: 1 }),
+        stagger(100, [animate("0.5s", style({ opacity: 0 }))])
+      ],
+      { optional: true, limit: 1 }
+    ),
+    query(
+      ":enter",
+      [
+        style({ opacity: 0 }),
+        stagger(100, [animate("0.5s", style({ opacity: 1 }))])
+      ],
+      { optional: true, limit: 1 }
+    )
   ])
-])
-
+]);
