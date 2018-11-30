@@ -16,7 +16,7 @@ export class TabScrollComponent implements OnInit {
   constructor(
     private ref: ElementRef,
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private doument: Document
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class TabScrollComponent implements OnInit {
     );
     if (previous) {
       let height = previous.clientHeight;
-      let _fontSize = this.doument.documentElement.style.fontSize.match(/\d+/g);
+      let _fontSize = this.document.documentElement.style.fontSize.match(/\d+/g);
       let heightStr = `${height}px`;
       if (_fontSize) {
         heightStr = `${height / +_fontSize[0]}rem`;
