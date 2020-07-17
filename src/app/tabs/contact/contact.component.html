@@ -3,12 +3,15 @@
     联系
   </moka-header>
   <moka-tab-scroll>
-      <div class="flex align-items-center justify-content-center" style="height: 100%;">
-          <h1 style="font-size: 10rem;">C</h1>
-      </div>
+    <div
+      class="flex align-items-center justify-content-center"
+      style="height: 100%;"
+    >
+      <h1 style="font-size: 10rem;">C</h1>
+    </div>
   </moka-tab-scroll>
 </moka-tab-modal>
 
-<moka-nav-open-close [outlet]="outlet">
+<moka-bounce-in-left [outlet]="outlet">
   <router-outlet #outlet="outlet"></router-outlet>
-</moka-nav-open-close>
+</moka-bounce-in-left>

@@ -1,56 +1,59 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
-import { TabsComponent } from './tabs.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { AuthGuard } from '../core/auth/authGuard';
+import { TabsComponent } from "./tabs.component";
+import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
+import { ContactComponent } from "./contact/contact.component";
+import { AuthGuard } from "../core/auth/authGuard";
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: "tabs",
     component: TabsComponent,
     canActivateChild: [AuthGuard],
-    data: {animation: 'TabsComponent'},
+    data: { animation: "TabsComponent" },
     children: [
       {
-        path: '',
-        redirectTo: '/tabs/(home:home)',
-        pathMatch: 'full',
-        data: {animation: 'TabsComponent'},
+        path: "",
+        redirectTo: "/tabs/(home:home)",
+        pathMatch: "full",
+        data: { animation: "HomeComponent" },
       },
       {
-        path: 'home',
-        outlet: 'home',
+        path: "home",
+        outlet: "home",
         component: HomeComponent,
+        data: { animation: "HomeComponent" },
       },
       {
-        path: 'about',
-        outlet: 'about',
+        path: "about",
+        outlet: "about",
         component: AboutComponent,
+        data: { animation: "AboutComponent" },
       },
       {
-        path: 'contact',
-        outlet: 'contact',
+        path: "contact",
+        outlet: "contact",
         component: ContactComponent,
+        data: { animation: "ContactComponent" },
       },
       {
-        path: 'user',
-        loadChildren: '../user/user.module#UserModule'
-      }
-    ]
+        path: "user",
+        loadChildren: "../user/user.module#UserModule",
+      },
+    ],
   },
   {
-    path: '',
-    redirectTo: '/tabs/(home:home)',
-    pathMatch: 'full',
-    data: {animation: 'TabsComponent'},
-  }
+    path: "",
+    redirectTo: "/tabs/(home:home)",
+    pathMatch: "full",
+    data: { animation: "HomeComponent" },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TabsPageRoutingModule { }
+export class TabsPageRoutingModule {}
