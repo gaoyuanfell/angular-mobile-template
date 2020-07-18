@@ -4,12 +4,12 @@ import { Routes, RouterModule } from "@angular/router";
 const routes: Routes = [
   {
     path: "",
-    loadChildren: "./tabs/tabs.module#TabsModule",
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule),
     data: {animation: 'TabsComponent'},
   },
   {
     path: "login",
-    loadChildren: "./login/login.module#LoginModule",
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
     data: {animation: 'LoginComponent'},
   }
 ];

@@ -40,7 +40,7 @@ const routes: Routes = [
       },
       {
         path: "user",
-        loadChildren: "../user/user.module#UserModule",
+        loadChildren: () => import('../user/user.module').then(m => m.UserModule),
       },
     ],
   },
