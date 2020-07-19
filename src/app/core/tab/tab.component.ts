@@ -10,11 +10,9 @@ export class TabComponent {
   _zIndex = 0;
   set zIndex(i) {
     this._zIndex = i;
-    this.renderer.setStyle(
-      this.ref.nativeElement,
-      "visibility",
-      i ? "visible" : "hidden"
-    );
+    let state = i ? "visible" : "hidden";
+    this.renderer.setStyle(this.ref.nativeElement, "visibility", state);
+    this.renderer.setStyle(this.ref.nativeElement, "z-index", i);
   }
 
   @Input() tab;

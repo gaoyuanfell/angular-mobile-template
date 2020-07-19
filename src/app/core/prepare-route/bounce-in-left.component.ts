@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { animateList } from "../animations/route-animations";
+import { BaseAnimate } from "./base-animate";
 
 @Component({
   selector: "moka-bounce-in-left",
@@ -10,16 +11,10 @@ import { animateList } from "../animations/route-animations";
     "[@bounceInLeft]": "prepareRoute(outlet)",
   },
 })
-export class BounceInLeftComponent {
-  prepareRoute(outlet: RouterOutlet) {
-    return (
-      outlet &&
-      outlet.activatedRouteData &&
-      outlet.activatedRouteData["animation"]
-    );
-  }
-
+export class BounceInLeftComponent extends BaseAnimate {
   @Input() outlet: RouterOutlet;
 
-  constructor() {}
+  constructor() {
+    super();
+  }
 }
