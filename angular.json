@@ -140,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "angular-mobile-template"
+  "defaultProject": "angular-mobile-template",
+  "cli": {
+    "analytics": "084c21d9-4651-4c6e-a176-b1eae4fb66bb"
+  }
 }
