@@ -13,19 +13,33 @@ import {
 const animationContentClass = "moka-tab-modal";
 
 const _bounceInRightAnimation = [
-  query(`:enter ${animationContentClass}`, [style({ left: "-100%" })], {
-    optional: true,
-    limit: 1,
-  }),
+  query(
+    `:enter ${animationContentClass}`,
+    [style({ transform: "translateX(-100%)" })],
+    {
+      optional: true,
+      limit: 1,
+    }
+  ),
   group([
     query(
       `:enter ${animationContentClass}`,
-      [animate("300ms ease-out", style({ left: "0%" }))],
+      [
+        animate(
+          "333ms cubic-bezier(0.41, 0.99, 0.57, 1)",
+          style({ transform: "translateX(0%)" })
+        ),
+      ],
       { optional: true, limit: 1 }
     ),
     query(
       `:leave ${animationContentClass}`,
-      [animate("300ms ease-out", style({ left: "100%" }))],
+      [
+        animate(
+          "333ms cubic-bezier(0.41, 0.99, 0.57, 1)",
+          style({ transform: "translateX(100%)" })
+        ),
+      ],
       { optional: true, limit: 1 }
     ),
   ]),
@@ -67,7 +81,7 @@ const _bounceInLeftAnimation = [
 const _bounceOpacityInLeftAnimation = [
   query(
     `:enter ${animationContentClass}`,
-    [style({ transform: "translateX(100%)", opacity: "1" })],
+    [style({ transform: "translateX(100%)", opacity: 0 })],
     {
       optional: true,
       limit: 1,
@@ -79,7 +93,7 @@ const _bounceOpacityInLeftAnimation = [
       [
         animate(
           "333ms cubic-bezier(0.41, 0.99, 0.57, 1)",
-          style({ transform: "translateX(0%)", opacity: "1" })
+          style({ transform: "translateX(0%)", opacity: 1 })
         ),
       ],
       { optional: true, limit: 1 }
@@ -89,7 +103,7 @@ const _bounceOpacityInLeftAnimation = [
       [
         animate(
           "333ms cubic-bezier(0.41, 0.99, 0.57, 1)",
-          style({ transform: "translateX(-100%)", opacity: "1" })
+          style({ transform: "translateX(-100%)", opacity: 0 })
         ),
       ],
       { optional: true, limit: 1 }
@@ -219,7 +233,7 @@ export const animateList = [
   bounceOpacityInLeft,
   navOpen,
   navOpenClose,
-  fideIn,
+  // fideIn,
 ];
 
 // ---------------------------- 测试 ----------------------------------
@@ -239,32 +253,32 @@ export const fideIn2 = trigger("fideIn2", [
   transition("false <=> true", [animate("1s ease")]),
 ]);
 
-export const fideIn3 = trigger("fideIn3", [
-  transition(":enter", [
-    style({ opacity: 0 }),
-    animate("0.5s", style({ opacity: 1 })),
-  ]),
-  transition(":leave", [animate("0.5s", style({ opacity: 0 }))]),
-]);
+// export const fideIn3 = trigger("fideIn3", [
+//   transition(":enter", [
+//     style({ opacity: 0 }),
+//     animate("0.5s", style({ opacity: 1 })),
+//   ]),
+//   transition(":leave", [animate("0.5s", style({ opacity: 0 }))]),
+// ]);
 
-export const listAnimation = trigger("listAnimation", [
-  transition("* => *", [
-    // each time the binding value changes
-    query(
-      ":leave",
-      [
-        style({ opacity: 1 }),
-        stagger(100, [animate("0.5s", style({ opacity: 0 }))]),
-      ],
-      { optional: true, limit: 1 }
-    ),
-    query(
-      ":enter",
-      [
-        style({ opacity: 0 }),
-        stagger(100, [animate("0.5s", style({ opacity: 1 }))]),
-      ],
-      { optional: true, limit: 1 }
-    ),
-  ]),
-]);
+// export const listAnimation = trigger("listAnimation", [
+//   transition("* => *", [
+//     // each time the binding value changes
+//     query(
+//       ":leave",
+//       [
+//         style({ opacity: 1 }),
+//         stagger(100, [animate("0.5s", style({ opacity: 0 }))]),
+//       ],
+//       { optional: true, limit: 1 }
+//     ),
+//     query(
+//       ":enter",
+//       [
+//         style({ opacity: 0 }),
+//         stagger(100, [animate("0.5s", style({ opacity: 1 }))]),
+//       ],
+//       { optional: true, limit: 1 }
+//     ),
+//   ]),
+// ]);

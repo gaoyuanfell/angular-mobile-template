@@ -2,9 +2,17 @@
   <moka-header>
     信息
   </moka-header>
-  <moka-tab-scroll (click)="go()">
-    <div class="flex align-items-center justify-content-center" style="height: 100%;">
-      <h1 style="font-size: 10rem;">E</h1>
+  <moka-tab-scroll>
+    <div
+      class="flex align-items-center justify-content-center"
+      style="height: 100%;"
+    >
+      <div>
+        <button (click)="go('tabs/user/info')">info</button>
+        <button (click)="go('tabs/user/detail')">detail</button>
+        <button (click)="go('login')">login</button>
+        <h1 style="font-size: 10rem;">E</h1>
+      </div>
     </div>
   </moka-tab-scroll>
 </moka-tab-modal>

@@ -6,8 +6,8 @@ import { Router } from "@angular/router";
   templateUrl: "./tab-button.component.html",
   styleUrls: ["./tab-button.component.less"],
   host: {
-    "[attr.class]": '"tab-button"'
-  }
+    "[attr.class]": '"tab-button"',
+  },
 })
 export class TabButtonComponent {
   @Input("tab") tab;
@@ -17,10 +17,10 @@ export class TabButtonComponent {
 
   @HostListener("click", ["$event"])
   onClick(ev: Event) {
-    this.router.navigate(this.href);
     ev.preventDefault();
+    ev.stopPropagation();
+    this.router.navigate(this.href);
   }
 
-  // @Host() @Optional() private tabsComponent: TabsComponent,
   constructor(private router: Router) {}
 }

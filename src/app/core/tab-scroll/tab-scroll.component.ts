@@ -3,14 +3,14 @@ import {
   OnInit,
   ElementRef,
   Renderer2,
-  Inject
+  Inject,
 } from "@angular/core";
-import { DOCUMENT } from "@angular/platform-browser";
+import { DOCUMENT } from "@angular/common";
 
 @Component({
   selector: "moka-tab-scroll",
   templateUrl: "./tab-scroll.component.html",
-  styleUrls: ["./tab-scroll.component.less"]
+  styleUrls: ["./tab-scroll.component.less"],
 })
 export class TabScrollComponent implements OnInit {
   constructor(
@@ -26,7 +26,9 @@ export class TabScrollComponent implements OnInit {
     );
     if (previous) {
       let height = previous.clientHeight;
-      let _fontSize = this.document.documentElement.style.fontSize.match(/\d+/g);
+      let _fontSize = this.document.documentElement.style.fontSize.match(
+        /\d+/g
+      );
       let heightStr = `${height}px`;
       if (_fontSize) {
         heightStr = `${height / +_fontSize[0]}rem`;

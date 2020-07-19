@@ -7,8 +7,8 @@ import { animateList } from "../animations/route-animations";
   template: "<ng-content></ng-content>",
   animations: [...animateList],
   host: {
-    "[@bounceInLeft]": "prepareRoute(outlet)"
-  }
+    "[@bounceInLeft]": "prepareRoute(outlet)",
+  },
 })
 export class BounceInLeftComponent {
   prepareRoute(outlet: RouterOutlet) {

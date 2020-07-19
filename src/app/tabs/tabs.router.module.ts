@@ -12,35 +12,31 @@ const routes: Routes = [
     path: "tabs",
     component: TabsComponent,
     canActivateChild: [AuthGuard],
-    data: { animation: "TabsComponent" },
     children: [
       {
         path: "",
         redirectTo: "/tabs/(home:home)",
         pathMatch: "full",
-        data: { animation: "HomeComponent" },
       },
       {
         path: "home",
         outlet: "home",
         component: HomeComponent,
-        data: { animation: "HomeComponent" },
       },
       {
         path: "about",
         outlet: "about",
         component: AboutComponent,
-        data: { animation: "AboutComponent" },
       },
       {
         path: "contact",
         outlet: "contact",
         component: ContactComponent,
-        data: { animation: "ContactComponent" },
       },
       {
         path: "user",
-        loadChildren: () => import('../user/user.module').then(m => m.UserModule),
+        loadChildren: () =>
+          import("../user/user.module").then((m) => m.UserModule),
       },
     ],
   },
@@ -48,7 +44,6 @@ const routes: Routes = [
     path: "",
     redirectTo: "/tabs/(home:home)",
     pathMatch: "full",
-    data: { animation: "HomeComponent" },
   },
 ];
 
