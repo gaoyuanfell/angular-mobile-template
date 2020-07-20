@@ -14,7 +14,5 @@ export class DetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
-  ngOnInit() {
-    console.info("detail");
-  }
+  ngOnInit() {}
 }

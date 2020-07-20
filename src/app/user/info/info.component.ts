@@ -14,7 +14,5 @@ export class InfoComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
-  ngOnInit() {
-    console.info("info");
-  }
+  ngOnInit() {}
 }
