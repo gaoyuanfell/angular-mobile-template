@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #### generate
 
 ng new testAngular --style=less --routing=true --skipTests=true --viewEncapsulation=ShadowDom
+
+ng g c ../pages/mine/index --skipTests=true --style=less --selector=ifm-mine-page --type=page
