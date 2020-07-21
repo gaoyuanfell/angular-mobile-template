@@ -9,7 +9,5 @@ if (environment.production) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(AppModule, {
-    defaultEncapsulation: ViewEncapsulation.ShadowDom,
-  })
+  .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
