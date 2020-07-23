@@ -11,7 +11,11 @@ import { Router } from "@angular/router";
 })
 export class TabButtonComponent {
   @Input("tab") tab;
-  @Input("href") href;
+  private _href;
+  @Input("href") set href(val: string[]) {}
+  get href() {
+    return this._href;
+  }
 
   @HostBinding("class.active") active = false;
 
