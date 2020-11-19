@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class AboutComponent implements OnInit {
   go(url) {
-    this.router.navigate(["/tabs/user"]);
+    this.router.navigate([url]);
   }
 
   constructor(private route: ActivatedRoute, private router: Router) {}

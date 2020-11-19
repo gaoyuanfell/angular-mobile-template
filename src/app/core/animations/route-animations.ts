@@ -51,7 +51,7 @@ const _bounceInLeftAnimation = [
     [style({ transform: "translateX(100%)" })],
     {
       optional: true,
-      limit: 1,
+      limit: 10,
     }
   ),
   group([
@@ -63,7 +63,10 @@ const _bounceInLeftAnimation = [
           style({ transform: "translateX(0%)" })
         ),
       ],
-      { optional: true, limit: 1 }
+      {
+        optional: true,
+        limit: 10,
+      }
     ),
     query(
       `:leave ${animationContentClass}`,
@@ -73,7 +76,10 @@ const _bounceInLeftAnimation = [
           style({ transform: "translateX(-100%)" })
         ),
       ],
-      { optional: true, limit: 1 }
+      {
+        optional: true,
+        limit: 10,
+      }
     ),
   ]),
 ];

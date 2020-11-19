@@ -7,7 +7,9 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./contact.component.less"],
 })
 export class ContactComponent implements OnInit {
-  go(url) {}
+  go(url) {
+    this.router.navigate([url]);
+  }
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
